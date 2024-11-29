@@ -8,7 +8,7 @@ RUN apk update && \
     rm glibc-2.35-r1.apk && ln -s /usr/glibc-compat/lib/* /lib64/ && \
     wget -q -O /opt/Miniforge3-Linux-x86_64.sh https://github.com/conda-forge/miniforge/releases/latest/download/Miniforge3-Linux-x86_64.sh && \
     bash /opt/Miniforge3-Linux-x86_64.sh -f -b -p /opt/conda/ && rm -rf /opt/Miniforge3-Linux-x86_64.sh /var/cache/apk/* && \
-    cd /bin/ && wget -O nextclade https://github.com/nextstrain/nextclade/releases/latest/download/3.8.2/nextclade-x86_64-unknown-linux-musl && chmod u+x ./nextclade
+    cd /bin/ && wget -O nextclade https://github.com/nextstrain/nextclade/releases/latest/download/nextclade-x86_64-unknown-linux-musl && chmod u+x ./nextclade
 
 FROM nextclade AS pangolin
 RUN git clone https://github.com/cov-lineages/pangolin.git && cd pangolin/ &&  \
